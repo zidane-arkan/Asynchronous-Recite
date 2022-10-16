@@ -12,14 +12,32 @@ let order = (fruitName, call_production) => {
         return fruit == fruitName;
     });
     setTimeout(() => {
-        console.log(`You order ${findFruit}`);
-        call_production();
+        console.log(`You order Ice Cream With ${findFruit} Flavor`);
+        setTimeout(() => {
+            console.log('Cut The Fruit');
+            setTimeout(() => {
+                console.log('Add Water and Ice');
+                setTimeout(() => {
+                    console.log('Start The Machine');
+                    setTimeout(() => {
+                        console.log(`Use ${stocks.Holder[0]}`);
+                        setTimeout(() => {
+                            console.log(`Use ${stocks.Toppings[1]}`);
+                            setTimeout(() => {
+                                console.log(`Serve Ice Cream`);
+                                call_production();
+                            }, 2000);
+                        }, 3000);
+                    }, 2000);
+                }, 1000);
+            }, 1000);
+        }, 2000);
     }, 2000);
 };
 
 let production = () => {
     setTimeout(() => {
-        console.log("Production Started");
+        console.log("Production Ended");
     }, 0000);
 };
 
