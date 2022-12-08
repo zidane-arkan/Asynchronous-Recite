@@ -9,9 +9,7 @@ let order = (time, work) => {
     //Place Order
     return new Promise((resolve, reject) => {
         if (isShopOpen) {
-            setTimeout(() => {
-                resolve(work());
-            }, time);
+            setTimeout(() => resolve(work()), time);
         } else {
             reject("Shop is Closed");
         }
@@ -40,3 +38,28 @@ order(3000, () => `Order Ice Cream with ${stocks.Fruits[2]}`)
     .catch((err) => {
         console.log(err);
     })
+
+// const stocks = {
+//     Fruits: ["strawberry", "grapes", "banana", "apple"],
+//     Holder: ["Cone", "Cup", "Stick"],
+//     Toppings: ["Chocolate", "Sprinkles"]
+// };
+// let isShopOpen = true;
+
+// let order = (time, work) => {
+//     //Place Order
+//     return new Promise((resolve, reject) => {
+//         if (isShopOpen) {
+//             setTimeout(() => resolve(work), time);
+//         } else {
+//             reject("Shop is Closed");
+//         }
+//     });
+// };
+
+// let orderAsync = async () => {
+//     await order(3000, "Making Ice Cofee")
+//         .then((res) => console.log(res));
+// };
+
+// orderAsync();
